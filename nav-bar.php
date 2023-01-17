@@ -10,7 +10,7 @@
 	    <meta name="author" content="">
 	    <meta name="keywords" content="">
 	    <meta name="description" content="">
-
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="style.css">
 
     </head>
@@ -51,22 +51,34 @@
 					<nav id="navbar">
 						<div class="main-menu stellarnav">
 							<ul class="menu-list">
-								<li class="menu-item active"><a href="#home" data-effect="Home">Home</a></li>
-								<li class="menu-item"><a href="#about" class="nav-link" data-effect="About">About</a></li>
+								<li class="menu-item active"><a href="index.php" data-effect="Home">Home</a></li>
+								<li class="menu-item"><a href="about.php" class="nav-link" data-effect="About">About</a></li>
+								
 								<!-- <li class="menu-item has-sub">
-									<a href="#pages" class="nav-link" data-effect="Pages">Products</a>
+									<a href="index.php" class="nav-link" data-effect="Pages">Products</a>
 
 									<ul>
-								        <li><a href="styles.html">Books</a></li>
-								        <li><a href="blog.html">Albums</a></li>
-								        <li><a href="single-post.html">Movies</a></li>
+								        <li><a href="books.php">Books</a></li>
+								        <li><a href="albums.php">Albums</a></li>
+								        <li><a href="movies.php">Movies</a></li>
 								     </ul>
 
 								</li> -->
+								<!-- <div class="dropdown">
+    								<label for="menu">Select an option:</label>
+    									<select name="menu" id="menu">
+        								<option value="">--Select--</option>
+										<ul>
+								        <li><a href="books.php">Books</a></li>
+								        <li><a href="albums.php">Albums</a></li>
+								        <li><a href="movies.php">Movies</a></li>
+								    	</ul>
+										</select>
+								</div> -->
                                 <li class="menu-item"><a href="books.php" class="nav-link" >Books</a></li>
                                 <li class="menu-item"><a href="movies.php" class="nav-link" >Movies</a></li>
                                 <li class="menu-item"><a href="albums.php" class="nav-link" >Albums</a></li>
-								<li class="menu-item"><a href="#contact" class="nav-link" data-effect="Contact">Contact</a></li>
+								<li class="menu-item"><a href="contact.php" class="nav-link" data-effect="Contact">Contact</a></li>
 							</ul>
 						</div>
 					</nav>
