@@ -38,8 +38,8 @@ session_start();
                     echo "Email/parola incorecta";
                 }
             }else{
-            header("Location:signup.php");
                 echo "Utilizatorul nu exista, creeaza-ti cont acum";
+                header("Location:signup.php");
             }
             $stmt->close();
             $conn->close();
@@ -69,7 +69,7 @@ session_start();
 
     <div class="login">
         <h1 class="login-title1">Bine ati venit</h1>
-        <form method="post" action="">
+        <form class="login-form" method="post" action="">
         <label for="email">Email:</label>
         <input type="email" name="email" id="email">
         <br>
@@ -82,6 +82,8 @@ session_start();
         </form>
 
     </div>
+
+
 
 </body>
 
