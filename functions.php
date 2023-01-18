@@ -1,4 +1,5 @@
 <?php
+include("config.php");
 function get_title($conn, $id)
 {   
         $query = "SELECT book_title FROM books WHERE book_id='$id'";
@@ -10,3 +11,5 @@ function get_title($conn, $id)
 }
 
 ?>
+
+<h1 class="title"><?php echo get_title($conn, $id); ?></h1>

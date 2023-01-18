@@ -1,7 +1,36 @@
-<?php
-include("config.php");
+<?php 
+include ("config.php");
 include("nav-bar.php");
+                $sql = "SELECT book_title, author_name, book_price, image FROM book";
+                $result = $conn->query($sql);
+                
+                $count=0;
+                
+                // if ($result->num_rows > 0) {
+                // output data of each row 
+                    echo '<table>';   
+                    echo '<tr>'; 
+                    while($row = $result->fetch_assoc()) {
+                        //echo '<tr class="product-item">';
+                            echo '<td><img class="product-image" src="data:image/png;base64,'.base64_encode($row["image"]).'"/></td>';
+                            echo '<td class="product-title">'.$row["book_title"].'</td>';
+                            echo '<td class="product-price">'.$row["author_name"].'</td>';
+                            echo '<td class="product-price">'.$row["book_price"].'</td>';
+                            $count++;
+                            if($count%3==0)
+                            {
+                                echo'</tr>';
+                                echo'<tr>';
+                            }
+                       // echo '</tr>';
+                    }   
+                echo'</tr>';
+                echo'</table>';
+
+                $conn->close();
+
 ?>
+
 
 <!DOCTYPE html>
 	<html lang="en">
@@ -19,32 +48,8 @@ include("nav-bar.php");
         <link rel="stylesheet" type="text/css" href="style.css">
 
     </head>
-    <body>
 
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Title</th>
-      <th>Author</th>
-    </tr>
-  </thead>
-  <tbody>
+
     <?php
-      // Connect to the database
-    //   $db = new PDO('mysql:host=localhost;dbname=librarie_online', 'username', 'password');
-      // Prepare and execute the SQL query
-      $stmt = $db->query('SELECT id, title, author FROM books');
-      // Fetch the results
-      $results = $stmt->fetchAll();
-      // Iterate through the results and display them in a table
-      foreach ($results as $row) {
-        echo '<tr>';
-        echo '<td>'.$row['id'].'</td>';
-        echo '<td>'.$row['title'].'</td>';
-        echo '<td>'.$row['author'].'</td>';
-        echo '</tr>';
-      }
+    include("footer1.php");
     ?>
-  </tbody>
-</table>

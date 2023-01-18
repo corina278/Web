@@ -1,10 +1,36 @@
-<?php
-
-session_start();
-include("config.php");
+<?php 
+include ("config.php");
 include("nav-bar.php");
+                $sql = "SELECT film_title, producer_name, film_price, image FROM film";
+                $result = $conn->query($sql);
+                
+                $count=0;
+                
+                // if ($result->num_rows > 0) {
+                // output data of each row 
+                    echo '<table>';   
+                    echo '<tr>'; 
+                    while($row = $result->fetch_assoc()) {
+                        //echo '<tr class="product-item">';
+                            echo '<td><img class="product-image" src="data:image/png;base64,'.base64_encode($row["image"]).'"/></td>';
+                            echo '<td class="product-title">'.$row["film_title"].'</td>';
+                            echo '<td class="product-price">'.$row["producer_name"].'</td>';
+                            echo '<td class="product-price">'.$row["film_price"].'</td>';
+                            $count++;
+                            if($count%3==0)
+                            {
+                                echo'</tr>';
+                                echo'<tr>';
+                            }
+                       // echo '</tr>';
+                    }   
+                echo'</tr>';
+                echo'</table>';
+
+                $conn->close();
 
 ?>
+
 
 <!DOCTYPE html>
 	<html lang="en">
@@ -22,41 +48,8 @@ include("nav-bar.php");
         <link rel="stylesheet" type="text/css" href="style.css">
 
     </head>
-    <body>
 
-<section class="bg-sand padding-large">
-	<div class="container">
-		<div class="row">
 
-			<div class="col-md-6">
-				<a href="#" class="product-image"><img src="images/main-banner2.jpg"></a>
-			</div>
-
-			<div class="col-md-6 pl-5">
-				<div class="product-detail">
-					<h1>Birds Gonna Be Happy</h1>
-					<p>Fiction</p>
-					<span class="price colored">$45.00</span>
-
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. 
-					</p>
-					<p>
-						Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-
-					<button type="submit" name="add-to-cart" value="27545" class="button">Add to cart</button>
-					
-				</div>
-			</div>
-
-		</div>
-	</div>
-</section>
-    </body>
-    </html>
+    <?php
+    include("footer1.php");
+    ?>
