@@ -24,25 +24,43 @@ session_start();
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
-            $query = "SELECT * FROM client WHERE email = ? LIMIT 1";
-            $stmt = $conn->prepare($query);
-            $stmt->bind_param("s", $email);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            if($result->num_rows > 0){
-                $user_data = $result->fetch_assoc();
-                if(password_verify($password, $user_data['password'])){
-                    $_SESSION['email'] = $user_data['email'];
-                    header("Location:index.php");
-                }else{
-                    echo "Email/parola incorecta";
-                }
-            }else{
-                echo "Utilizatorul nu exista, creeaza-ti cont acum";
-                header("Location:signup.php");
-            }
-            $stmt->close();
-            $conn->close();
+            $query = "SELECT * FROM client WHERE email = '$email' LIMIT 1";
+             $result = mysqli_query($conn,$query);
+            $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      
+            $count = mysqli_num_rows($result);
+      
+      // If result matched $myusername and $mypassword, table row must be 1 row
+		
+      if($count == 1) {
+         $_SESSION['login_user'] = $email;
+            $_SESSION['login_user'] = $password;
+         header("location: index.php");
+      }else {
+         $error = "Your Login Name or Password is invalid";
+         echo "Email/parola incorecta";
+      }
+
+      
+
+            // $stmt = $conn->prepare($query);
+            // $stmt->bind_param("s", $email);
+            // $stmt->execute();
+            // $result = $stmt->get_result();
+            // if($result->num_rows > 0){
+            //     $user_data = $result->fetch_assoc();
+            //     if(password_verify($password, $user_data['password'])){
+            //         $_SESSION['email'] = $user_data['email'];
+            //         header("Location:index.php");
+            //     }else{
+            //         echo "Email/parola incorecta";
+            //     }
+            // }else{
+            //     echo "Utilizatorul nu exista, creeaza-ti cont acum";
+            //     header("Location:signup.php");
+            // }
+            // $stmt->close();
+            // $conn->close();
         }
     }
 ?>

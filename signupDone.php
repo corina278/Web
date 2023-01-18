@@ -107,3 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <input type="text" id="ph_number" name="ph_number"><br>
   <input type="submit" value="Sign Up">
 </form>
+
+<?php
+include("footer1.php");
+?>
