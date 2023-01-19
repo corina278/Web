@@ -284,9 +284,9 @@
     margin: 0;
   }
   img {
-    display: inline-block;
+    display: inline-block; 
     border: 0;
-    max-width: 100%;
+    max-width: 150px;
     height: auto;
     vertical-align: middle;
   }
@@ -502,7 +502,7 @@ html {
   margin: auto;
 }
 
-/* Hide the images by default */
+Hide the images by default
 .mySlides {
   display: none;
 }
@@ -525,13 +525,21 @@ html {
 
 /* Position the "next button" to the right */
 .next {
-  right: 0;
+  right: -11px;
   border-radius: 3px 0 0 3px;
+  color: #000;
+  text-decoration: none;
+}
+.prev{
+  left: -10px;
+  color: #000;
+  text-decoration: none;
 }
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
+  color: #fff;
 }
 
 /* Caption text */
@@ -559,7 +567,7 @@ html {
   cursor: pointer;
   height: 15px;
   width: 15px;
-  margin: 0 2px;
+  margin: 20px 2px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
@@ -569,18 +577,6 @@ html {
 .active, .dot:hover {
   background-color: #717171;
 }
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
 /*form style*/
 
 form {
@@ -589,7 +585,7 @@ form {
   text-align: center;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="email"] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -611,4 +607,41 @@ button {
 button:hover {
   opacity: 0.8;
 }
+
+img.slide{
+  padding: 30px;
+  max-width: 100%;
+}
+
+div{
+  text-align: center;
+}
+
+/* wrapper-product */
+.wrapper-product{
+  display: grid;
+  margin: 25px;
+}
+.wrapper-product img{
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 215px;
+}
+.wrapper-product .product-info{
+  background-color: rgba(2,2,2,0.1);
+  display: grid;
+  margin: 10px 0;
+  padding: 5px;
+  border-radius: 10px;
+  line-height: 25px;
+}
+.wrapper-product .product-info span{
+  font-weight: 800;
+  color: #000;
+}
+.wrapper-product .product-info:hover{
+  background-color: rgba(2,2,2,0.3);
+}
+/* end wrapper-product */
+
 

@@ -35,7 +35,7 @@ session_start();
       if($count == 1) {
          $_SESSION['login_user'] = $email;
             $_SESSION['login_user'] = $password;
-         header("location: index.php");
+         header("location: indexAfter.php");
       }else {
          $error = "Your Login Name or Password is invalid";
          echo "Email/parola incorecta";

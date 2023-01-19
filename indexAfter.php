@@ -1,3 +1,12 @@
+<?php 
+
+session_start();
+
+	include("config.php");
+    // include("nav-bar.php");
+    
+
+?>
 <!DOCTYPE html>
 	<html lang="en">
 	<head>
@@ -10,32 +19,25 @@
 	    <meta name="author" content="">
 	    <meta name="keywords" content="">
 	    <meta name="description" content="">
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="style.css">
 
     </head>
     <body>
 
-<div id="header-wrap">
+    <!--nav bar dupa login-->
+    <div id="header-wrap">
 	
 	<div class="top-content">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col">
 					<div class="right-element">
-                        <!--trebuie adaugat fisierul de sign-up-->
-						<a href="login.php" class="user-account for-buy"><i class="fas fa-sign-in-alt"></i><span>Account</span></a>
+						<span>Welcome!</span></a>
                         <!--trebuie adaugat fisierul de cart-->
 						<a href="#" class="cart for-buy"><i class="icon icon-clipboard"></i><span>Cart:(0 $)</span></a>
 
-					</div><!--top-right / facut--> 
-				</div>
-				
-			</div>
-		</div>
-	</div><!--top-content-->
-
-	<header id="header">
+                        <header id="header">
 		<div class="container">
 			<div class="row">
 
@@ -68,3 +70,34 @@
 	</header>
 		
 </div>
+
+
+    <div class="slideshow-container">
+
+
+            <div class="mySlides fade">
+                <img src="img/download (1).jpeg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="img/download.jpeg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="img/PaperTown.png" style="width:100%">
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+
+        </div>
+        <script src="slide.js"></script>
+    </body>
+    </html>
+    <?php
+    include("footer1.php");
+    ?>
