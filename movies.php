@@ -9,23 +9,27 @@ include("nav-bar.php");
                 // if ($result->num_rows > 0) {
                 // output data of each row 
                     echo '<table>';   
-                    echo '<tr>'; 
+                    echo '<tr>';
+                    echo '<div class="container">';
+                    echo '<div class="row">';
                     while($row = $result->fetch_assoc()) {
                         //echo '<tr class="product-item">';
-                            echo '<td><img class="product-image" src="data:image/png;base64,'.base64_encode($row["image"]).'"/></td>';
-                            echo '<td class="product-title">'.$row["film_title"].'</td>';
-                            echo '<td class="product-price">'.$row["producer_name"].'</td>';
-                            echo '<td class="product-price">'.$row["film_price"].'</td>';
-                            $count++;
-                            if($count%3==0)
-                            {
-                                echo'</tr>';
-                                echo'<tr>';
-                            }
-                       // echo '</tr>';
+                        
+                        echo '<div class="col-4">';
+                        echo '<div class="wrapper-product">';
+                        echo '<img src="data:image/png;base64,' . base64_encode($row["image"]) . '"/>';
+                        echo '<div class="product-info">';
+                        echo '<span>' .  $row["film_title"] .  '</span>';
+                        echo '<span>' .  $row["producer_name"] . '</span>';
+                        echo '<span>' .  $row["film_price"] . '</span>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
                     }   
-                echo'</tr>';
-                echo'</table>';
+                    echo '</div>';   
+                    echo '</div>';   
+                    echo'</tr>';
+                    echo'</table>';
 
                 $conn->close();
 

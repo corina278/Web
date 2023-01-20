@@ -645,3 +645,29 @@ div{
 /* end wrapper-product */
 
 
+h1   {
+	color: bisque;
+    text-align: center;
+    text-shadow: 3px 3px darkolivegreen;
+    font-size: 50px;
+	}
+    dt{
+        font-size:30px;
+        color:black;
+    }
+    dd{
+        color: black;
+        text-align: end;
+        font-size:25px;
+    }
+
+    /* img.about{
+      width:1000px; 
+      height:1000px;
+    } */
+
+    h2{
+      padding: 1rem 2rem;
+    }
+
+    
