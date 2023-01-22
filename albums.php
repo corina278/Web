@@ -2,11 +2,7 @@
 include ("config.php");
 include("nav-bar.php");
                 $sql = "SELECT album_title, artist_name, album_price, image FROM music";
-                $result = $conn->query($sql);
-                
-                $count=0;
-                
-                // if ($result->num_rows > 0) {
+                $result = $conn->query($sql);  
                 // output data of each row 
                     echo '<table>';   
                     echo '<tr>';
